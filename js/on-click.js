@@ -4,7 +4,6 @@ function makeRed(){
 
 const makeBlack = document.getElementById('make-black')
 makeBlack.onclick = makeblackBtn
-
 function makeblackBtn(){
     document.body.style.backgroundColor = 'black'
 }

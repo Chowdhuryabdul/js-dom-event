@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In this page i will describe how to add event handler to change the text</title>
+    <h1 id="first-change">Final event handlers</h1>
+    <h3 id="handler-status">Default text</h3>
+    <p id="default-text">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="firstButton()">handel event by Add onclick function</button>
+    <button id="secondbtn">Hnadle even by addeventlistner</button>
+</head>
+<script>
+    function firstButton(){
+        // document.body.style.backgroundColor = 'red'
+        const addeventhandler = document.getElementById('handler-status');
+        addeventhandler.innerText = 'will show now sth different'
+    }
+
+    document.getElementById('secondbtn').addEventListener('click', function(){
+        const addeventhandler = document.getElementById('first-change');
+        addeventhandler.innerText = 'i will show something very dangererous'
+    })
+    document.getElementById('btn-update').addEventListener('click', function(){
+        const inputfield = document.getElementById('input-field')
+        const inputText = inputfield.value 
+        const defaultText = document.getElementById('default-text')
+        defaultText.innerText = inputText;
+        inputfield.value = '';
+        
+    })
+
+</script>
+<body>
+    
+</body>
+</html>

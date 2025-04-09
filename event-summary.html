@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js dom summary</title>
+</head>
+<body>
+    <h1>FInal event handlers</h1>
+    <h3 id="handler-status">Defalult text</h3>
+    <p id="input-text-display">Default input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+    <br>
+    <br>
+    <button onclick="handelOnclick()">handel event by Add onclick function</button>
+    <button id="event-button">Hnadle even by addeventlistner</button>
+    <script>
+        function handelOnclick(){
+            // document.boyd.style.backgroundColor = 'lightBlue'
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Handled by function attched on onclink attribute'
+        }
+
+        document.getElementById('event-button').addEventListener('click', function (){
+            // document.body.style.backgroundColor = 'red'
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'it will agina change by the addevent handler method'
+        })
+
+        document.getElementById('btn-update').addEventListener('click', function(){
+        const inputfield = document.getElementById('input-field')
+        const inputText = inputfield.value;
+        const p = document.getElementById('input-text-display');
+        p.innerText = inputText;
+        inputfield.value ='';
+        })
+
+    </script>
+</body>
+</html>
