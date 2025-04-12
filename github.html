@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">My secret info</h1>
+    <input id="input-field" type="text" placeholder="pls type delete">
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+        document.getElementById('input-field').addEventListener('keyup', function(event){ /* i am using here event parameter to get the writing inside the input field */
+          const text = event.target.value;
+          console.log(text)
+          const deleletBtn = document.getElementById('btn-delete')  
+          if(text === 'delet'){
+            deleletBtn.removeAttribute('disabled') /* it remaine active after writing more than delete word, so i need to write that if i write more than delete it will be agian disabled */
+          }else{
+            deleletBtn.setAttribute('disabled', true)
+          }
+        })
+        document.getElementById('btn-delete').addEventListener('click', function(){
+        const textHighlight = document.getElementById('text');
+        textHighlight.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

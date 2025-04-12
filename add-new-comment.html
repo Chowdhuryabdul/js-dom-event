@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice session to add new comment in the comment box</title>
+</head>
+<body>
+    <h3>Practice session to add new comment in the comment box will will be added in the div after pressing in the button</h3>
+<div id="div">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt maiores possimus tenetur tempore aut illum, voluptatibus quasi exercitationem accusantium molestiae accusamus voluptate suscipit sunt vitae praesentium sit id ad fugiat. Reiciendis facilis suscipit fugiat maxime qui ab accusamus. Voluptatibus necessitatibus velit est nisi iusto sunt earum provident eveniet quidem laborum!</p>
+    <p>Ducimus nihil nostrum provident atque dignissimos repudiandae ratione. Sapiente, quidem incidunt! Assumenda quam est dolorem impedit quo nam eos repellat corporis deserunt animi, autem beatae? Ullam ipsum culpa debitis vero dolore doloremque quos magnam suscipit? Tempora dolores quaerat in animi aperiam, nostrum deleniti corporis cum iure mollitia, omnis, accusantium dolore!</p>
+    <p>Sed sunt dolor suscipit vero corrupti ipsum ea. Aliquam sed earum quidem similique nostrum consectetur. Nobis ullam eligendi odit non quam architecto voluptatibus ut commodi asperiores sequi ipsa, expedita distinctio quod maxime numquam. Earum voluptatem dolore unde maxime aspernatur quos, ea harum cupiditate ipsam debitis a omnis dolor error illum?</p>
+</div>
+<textarea name="" id="comment-area" cols="30" rows="10"></textarea>;
+<button id="click-btn">click here</button>
+<script>
+document.getElementById('click-btn').addEventListener('click', function(){
+    const commentArea = document.getElementById('comment-area');
+   const textInput = commentArea.value 
+   const divElement = document.getElementById('div');
+   const newPara = document.createElement('p')
+   newPara.innerText = textInput
+   divElement.appendChild(newPara);
+   commentArea.value = '';
+
+})
+</script>
+</body>
+</html>

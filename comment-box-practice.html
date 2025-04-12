@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>will practice how to add new comment</title>
+
+</head>
+<body>
+    <h1 id="heading">this page i will try how to add new comment</h1>
+    <button onclick="addClick()">click here</button>
+    <div id="div">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem aliquid id, deleniti, provident dolorem recusandae accusamus, sit nobis quae similique suscipit fugiat aut nemo dolorum possimus pariatur ullam. Veritatis alias molestias inventore qui necessitatibus neque nobis officiis quasi, harum soluta magnam nulla totam ratione rem temporibus error provident culpa rerum!</p>
+        <p>Eum maxime aperiam modi obcaecati laboriosam dolorem numquam quo est veniam, eos minus nemo quia ipsa dicta deserunt corrupti. Hic fuga officia laudantium. Dolorum dignissimos cumque reiciendis id, repudiandae expedita repellendus facere tenetur placeat eos saepe eligendi quia totam ratione quidem ipsum similique! Repudiandae, corporis necessitatibus ipsum illo impedit eligendi.</p>
+        <p>Distinctio in, maxime tenetur fugit asperiores ab nihil est velit praesentium, dolore eveniet totam exercitationem aperiam voluptate eaque soluta aspernatur, corporis laborum? Unde nostrum eius suscipit adipisci quis excepturi corporis veritatis inventore pariatur ducimus sequi amet quam nobis eligendi esse maxime voluptatem, odio natus maiores fugiat error laborum? Fugit, neque.</p>
+    </div>
+    <textarea name="" id="comment-area" cols="30" rows="10"></textarea>
+    <button id="click-btn">Clcik here to change the text</button>
+    <script>
+        function addClick(){
+            const onlyHeading = document.getElementById('heading');
+            onlyHeading.innerText = 'will show the new page'
+        }
+
+        document.getElementById('click-btn').addEventListener('click', function(){
+        const findCommentArea = document.getElementById('comment-area');
+        const textInput = findCommentArea.value ;
+        const divElement = document.getElementById('div')
+        const p = document.createElement('p');
+        p.innerText = textInput;
+        div.appendChild(p)
+        findCommentArea.value = '';
+        })
+    </script>
+</body>
+</html>

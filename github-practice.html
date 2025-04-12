@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="text">Want to practice how to delete through addEventListener from the input box as github does.</h1>
+    <input id="input-field" type="text" placeholder="please type Delete">
+    <button id="delete-btn" disabled>Delete</button>
+
+    <script>
+        document.getElementById('input-field').addEventListener('keyup', function(event){
+        const text = event.target.value
+        console.log(text)
+        const deletButton = document.getElementById('delete-btn');
+        if(text === 'delete'){
+            deletButton.removeAttribute('disabled')
+        }else{
+            deletButton.setAttribute('disabled', true)
+        }
+        })
+        document.getElementById('delete-btn').addEventListener('click', function(){
+        const textHighlight = document.getElementById('text');
+        textHighlight.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

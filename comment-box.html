@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new comment</title>
+</head>
+<body>
+    <h1>pls ass your comment</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptas natus similique rem aspernatur! Recusandae, non. A velit hic libero recusandae quo quidem, vel qui accusamus aut perspiciatis deserunt temporibus inventore ipsum tempora illum excepturi, consequuntur amet odit asperiores laboriosam optio minima eveniet nobis? Atque consectetur commodi possimus pariatur praesentium!</p>
+        <p>Quo, nihil pariatur quia asperiores quod mollitia fuga, illum dolores magni reprehenderit dolor temporibus placeat accusamus? Sit ut soluta magni ad quibusdam incidunt. Quod magni nisi numquam obcaecati asperiores sapiente dignissimos cum. Labore maiores cumque consectetur voluptatum quibusdam at qui! Consectetur assumenda qui nam alias. Officiis labore cum libero perspiciatis.</p>
+        <p >Ut voluptates repudiandae, doloribus suscipit laudantium sed? Perferendis magnam sequi ad quis unde rem voluptate alias libero dolore ducimus! Quae minus culpa consectetur aliquid saepe dolorem soluta nobis repudiandae sit magnam, ipsa natus et reprehenderit asperiores odio esse fugiat aspernatur repellat accusantium suscipit. Cum temporibus, quod quam quibusdam repellendus nulla.</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="50" rows="5"></textarea>
+        <br>
+        <button id="form-btn">Post</button>
+    </div>
+
+    <script>
+        /* step 1 - add even listner to the post button */
+        document.getElementById('form-btn').addEventListener('click', function(){
+        /* step 2 - get the comment inside the text area */
+        const newComment = document.getElementById('new-comment');
+        const inputText = newComment.value;
+        /* step 3 - set the comment inside the comment container
+        there are 4 steps here--
+        1. get the commentContainer
+        2. create a new element (p tag)
+        3. set the text of the comment as innerText of the p tag
+        4. add the p tag using appendChild */
+        const commentContainer = document.getElementById('comment-container');
+        const p = document.createElement('p')
+        p.innerText = inputText;
+        commentContainer.appendChild(p)
+
+        /* step 4 - clear text */
+        newComment.value = '';
+        })
+    </script>
+</body>
+</html>

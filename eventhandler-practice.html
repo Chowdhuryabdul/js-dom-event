@@ -19,20 +19,20 @@
         // document.body.style.backgroundColor = 'red'
         const addeventhandler = document.getElementById('handler-status');
         addeventhandler.innerText = 'will show now sth different'
-    }
+    };
 
     document.getElementById('secondbtn').addEventListener('click', function(){
         const addeventhandler = document.getElementById('first-change');
         addeventhandler.innerText = 'i will show something very dangererous'
-    })
+    });
+
     document.getElementById('btn-update').addEventListener('click', function(){
         const inputfield = document.getElementById('input-field')
         const inputText = inputfield.value 
         const defaultText = document.getElementById('default-text')
         defaultText.innerText = inputText;
-        inputfield.value = '';
-        
-    })
+        inputfield.value = '';       
+    });
 
 </script>
 <body>
