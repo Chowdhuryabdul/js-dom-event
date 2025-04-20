@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>want to practice to push something in the paragraph from comment box</title>
+</head>
+<body>
+    <h1>pls add comment</h1>
+    <div id="text-container">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus reprehenderit tempore, quo ipsa nulla voluptate repudiandae deleniti quia molestias in, officiis suscipit debitis consectetur optio? Consectetur fugiat impedit, in nostrum non molestias recusandae. Atque deserunt eius, corrupti facilis quia cum neque tempore aliquam exercitationem ea dolore inventore! Dolore, ab itaque.</p>
+        <p>Veritatis pariatur repellat sapiente excepturi fugit rerum sequi deserunt incidunt optio enim repudiandae accusantium quibusdam cum sunt laboriosam, corrupti rem, quod a praesentium voluptatum iusto molestias! Iure est a quia omnis explicabo quam, dolor dolorum repudiandae dolores culpa, et ullam nihil voluptas debitis velit? Minima quidem autem velit porro possimus!</p>
+        <p>Ex, repellat repudiandae. Aperiam esse obcaecati harum non, officiis ipsa magnam adipisci facere veniam praesentium aliquid sunt ipsam quia incidunt hic placeat modi blanditiis rem veritatis ducimus repudiandae enim commodi minus. Corporis fugiat itaque officiis accusantium nemo temporibus totam eum sit est officia hic, libero, atque quasi vero cum ea.</p>
+    </div>
+    <textarea name="" id="text-area" cols="30" rows="10"></textarea>
+    <button id="click-btn">click button</button>
+    <script>
+       document.getElementById('click-btn').addEventListener('click', function(){
+           const addNewComment = document.getElementById('text-area')
+           const inputText = addNewComment.value
+           
+           const commentContainer = document.getElementById('text-container');
+           const newPara = document.createElement('p');
+           newPara.innerText = inputText
+           commentContainer.appendChild(newPara)
+           addNewComment.value = '';
+        //    console.log(newPara)
+           
+
+       })
+      
+    </script>
+</body>
+</html>

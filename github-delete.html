@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practie more about github delete</title>
+</head>
+<body>
+    <h1 id="text-highlight">Will delete what is in here</h1>
+    <input type="email" name="" id="email-input" placeholder="Pls write emial here">
+    <button id="delete-btn" disabled>Delete</button>
+
+    <script>
+        /* to hide the text */
+        document.getElementById('delete-btn').addEventListener('click', function(){
+        const textHighlight = document.getElementById('text-highlight');
+        textHighlight.style.display = 'none' 
+        })
+
+        /* github deleteing */
+        document.getElementById('email-input').addEventListener('keyup', function(event){
+        /* plan is to enable when i will write 'delete' in the input and when i will write something else than 'delete' then it will be autometically disabled */
+        const textArea = event.target.value
+        const deleteBtn = document.getElementById('delete-btn')
+        if(textArea === 'delete'){
+            deleteBtn.removeAttribute ('disabled') /* - it means the disabled attribute in the 'delete btn' will be removed */
+        }else{
+            deleteBtn.setAttribute('disabled', true)
+        }
+        })
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@ function makeRed(){
 }
 
 const makeBlack = document.getElementById('make-black')
-makeBlack.onclick = makeblackBtn
+makeBlack.onclick = makeblackBtn /* this is funciton without call the function */
 function makeblackBtn(){
     document.body.style.backgroundColor = 'black'
 }

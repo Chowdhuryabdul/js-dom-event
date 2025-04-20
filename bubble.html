@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        ul{
+            border: 2px solid tomato;
+        }
+        body{
+            border: 2px solid green;
+        }
+        #item-2{
+            border: 2px solid blue;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>Exploring bubble</h1>
+    <section id="section-container">
+        <!-- ul>li#item-$*6>lorem2 -->
+        <ul id="list-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Facilis, voluptate?</li>
+            <li id="item-3">Nihil, obcaecati?</li>
+            <li id="item-4">Eum, non.</li>
+            <li id="item-5">Ipsa, commodi.</li>
+            <li id="item-6">Doloribus, reiciendis?</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 click')  
+            /* event.stopPropagation() */ /* it means it will not go others but will cover immediate one  */
+            event.stopImmediatePropagation() /* this one will stop all the immediate one as well */
+        }) /* i can add many click handler in one place. you can see here i have added several eventhandler in one place */
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 second click')   
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 third click')   
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+            console.log('item-2 fourth click')   
+        })
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log('all the items check')
+        })
+        document.getElementById('section-container').addEventListener('click', function(){
+            console.log('clicked all the section')
+        })
+        document.getElementById('body').addEventListener('click', function(){
+            console.log('clicked the body')
+        })
+    </script>
+</body>
+
+<!-- there is a note in the bubble section-when it is clicked it executes the lowest event then goes to up and up -->
+<!--  if i want to stop it i just need to write a parameter(event)in the first script then will  write event.stoppropagation() -->
+
+</html>

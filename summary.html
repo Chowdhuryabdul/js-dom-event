@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary of the event handler milestone</title>
+</head>
+
+<body>
+
+    <head>Explore more about the event handler</head>
+    <button id="btn-green">Make Green</button>
+    <button id="btn-blue">Make Blue</button>
+    <button onclick="document.body.style.backgroundColor = 'red'" >Mkae red</button>
+    <button onclick="maekBlackbtn()">Make black</button>
+    <input id="email-input" type="email">
+
+
+    <!-- create a comment box and display comment -->
+
+    <section id="container">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, praesentium exercitationem iste incidunt voluptatibus fugit quo vitae itaque placeat sequi. Consequatur laboriosam dignissimos ex. Neque quibusdam quas dolorem soluta!</p>
+        <p>Porro vero est sed officia consectetur debitis quae cumque iusto nobis fugit provident, ad alias! Nisi quisquam tempore cumque consectetur sequi ipsam aperiam incidunt voluptate adipisci explicabo, obcaecati pariatur!</p>
+        <p>Quia nostrum corporis nam sit quos aut eveniet iure consequuntur hic voluptatum minima illo praesentium, possimus porro. Recusandae distinctio magni modi minus nisi aut cupiditate laudantium debitis cumque totam!</p>
+    </section>
+    <textarea name="" id="text-area" cols="30" rows="10"></textarea>
+    <button id="btn-add">Click here to add</button>
+
+    <!-- more events html -->
+
+    <h1 id="text-highlight">Want to practice how to delete the events</h1>
+    <button id="btn-more">button more</button>
+   
+
+    
+    <!-- Script section -->
+    <script>
+        
+   /*  more events html  */
+    document.getElementById('btn-more').addEventListener('click', function(){
+    
+    })
+
+
+        const makeGreen = document.getElementById('btn-green');
+        makeGreen.onclick = function makeGrrenBtn(){
+            document.body.style.backgroundColor = 'green'
+        }
+
+       document.getElementById('btn-blue').addEventListener('click', function(){
+        document.body.style.backgroundColor = 'blue'
+       })
+
+       function maekBlackbtn(){
+        document.body.style.backgroundColor = 'black'
+       }
+
+       document.getElementById('email-input').addEventListener('keyup', function(event){
+        console.log(event.target.value) /* if i want to take the value which is inside the input field */
+       })
+
+       /* comment box  */
+
+       document.getElementById('btn-add').addEventListener('click', function(){
+        const inputText = document.getElementById('text-area')
+        const text = inputText.value
+        const textContainer = document.getElementById('container');
+        const p = document.createElement('p');
+        p.innerText = text;
+        textContainer.appendChild(p)
+        inputText.value = '';
+       })
+
+    </script>
+</body>
+
+</html>

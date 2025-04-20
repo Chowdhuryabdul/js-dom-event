@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegate</title>
+</head>
+<body>
+    <h1>Explore event delegate</h1>
+    <section>
+        <!-- ul#list-container>li.item*6>lorem3 -->
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Ex, praesentium consequatur?</li>
+            <li class="item">Vel, adipisci porro!</li>
+            <li class="item">Nostrum, quidem voluptate.</li>
+            <li class="item">Debitis, perspiciatis magni?</li>
+            <li class="item">Aut, odit porro.</li>
+        </ul>
+        <button id="btn-add-new-item">Add new Item</button>
+    </section>
+    <script>
+       /*  const items = document.getElementsByClassName('item')
+        for(let item of items){
+            item.addEventListener('click', function(){
+                console.log(item)
+            })
+        //    i can do this same thing in another way
+           item.addEventListener('click', function(event){
+            // console.log(event.target) 
+            console.log(event.target.parentNode) if i want to get parent of this one then i will use the parentnode
+           })
+          item.addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target) this method can be used to remove the item which is targeted
+          })
+        } */
+       document.getElementById('list-container').addEventListener('click', function(event){
+    //    console.log(event.target) i can see item class is added in all the items
+        event.target.parentNode.removeChild(event.target)
+       })
+        document.getElementById('btn-add-new-item').addEventListener('click', function(){
+            const addContainer = document.getElementById('list-container');
+            const li = document.createElement('li') /* tag name and attribute name must be same as 'li' */
+            li.innerText = 'love you'
+            li.classList.add('item')
+            addContainer.appendChild(li)
+        })
+    </script>
+</body>
+<!--  i need to remember three things when i need to add --
+ 1. where i will add i need to find that
+ 2. what i will add so i need to make new list item
+
+ another important thing i need to remeber that -- if i want to add any child, it is best that i must add that child in the parent, not in another child. then if i add more child then parent will handle all as it is delegated to parent.
+  --> 
+</html>

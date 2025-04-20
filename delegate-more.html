@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice more about delegate</title>
+</head>
+<body>
+    <h1>I will see here how to use Delegate</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Earum, sunt hic!</li>
+            <li class="item">Voluptatum, modi ullam.</li>
+            <li class="item">Voluptatibus, necessitatibus autem.</li>
+            <li class="item">Minima, itaque deleniti?</li>
+            <li class="item">Maiores, culpa aspernatur.</li>
+        </ul>
+        <button id="btn-delete">Delete</button>
+    </section>
+    <script>
+      /*  const items = document.getElementsByClassName('item');
+       for(let item of items){
+        item.addEventListener('click', function(){
+            // console.log(item) i can do it both way this way and the next way as well
+            // console.log(event.target)
+            event.target.parentNode.removeChild(event.target)
+        })
+       } */
+
+       const listContainer = document.getElementById('list-container').addEventListener('click', function(event){
+        event.target.parentNode.removeChild(event.target)
+       })
+       document.getElementById('btn-delete').addEventListener('click', function(){
+       const li = document.createElement('li');
+       li.innerText = 'i loe you'
+       li.classList.add('item')
+       const listContainer = document.getElementById('list-container')
+       listContainer.appendChild(li)
+       })
+    </script>
+</body>
+</html>

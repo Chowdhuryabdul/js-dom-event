@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-Delegate goes to more detail</title>
+</head>
+<body>
+    <h1>Want to explore more about Event-Delegate</h1>
+    <section>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Facere, suscipit iure!</li>
+            <li class="item">Illo, harum quae.</li>
+            <li class="item">Iste, quod fuga?</li>
+            <li class="item">Earum, ex eveniet?</li>
+            <li class="item">Reiciendis, minima voluptates?</li>
+        </ul>
+        <button id="add-new">Add New</button>
+    </section>
+    <script>
+       /*  // here i have added the eventlistner in the child 
+        const items = document.getElementsByClassName('item')
+        for(let item of items){
+        item.addEventListener('click', function(event){ here i have got each item through for..of loop. before i used to get it through the id
+            // console.log(item) this is the one way to get the items
+        //    console.log(event.target)  i can also get the same thing with tis event paremeter. here target means the one is clicked
+        //   console.log(event.target.parentNode) i can also get the parent element
+        // event.target.parentNode.removeChild(event.target) if i want to remove an element from the list items 
+        })
+        } */
+
+        const listContainer = document.getElementById('list-container').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target.value) /* i can see what is going on inside the input through 'event' parameter. here 'target' is the full input field. with this 'value' i can get all the given value inside the input field  */
+        })
+
+        const addBtn = document.getElementById('add-new').addEventListener('click', function(){
+            const listContainer = document.getElementById('list-container');
+            const li = document.createElement('li');
+            li.innerText = 'Add a new items'
+            li.classList.add('item') /* adding class here- here i have added the same class name which is given in the main items as well */
+            listContainer.appendChild(li)
+        })
+    </script>
+
+    <!-- In the script section i can remove from the first part, but from the second part i can not remove even if i have set the same class name. because i have already added the eventhandler for the existing part which is the first part of the script. where i have added this eventhandler in the everry child by 'item' with the for..of loop. after adding the new item, it does not work here after adding the same class name 'item'. 
+    the solution is that when we add the eventlistner, we will add it in the parent, not in the child. so it will work for all items both the existings and new added one as well -->
+</body>
+</html>
