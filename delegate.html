@@ -20,7 +20,9 @@
         <button id="btn-add-new-item">Add new Item</button>
     </section>
     <script>
-       /*  const items = document.getElementsByClassName('item')
+
+        /* this is used to control the child node  like li under ul*/
+        const items = document.getElementsByClassName('item')
         for(let item of items){
             item.addEventListener('click', function(){
                 console.log(item)
@@ -28,12 +30,15 @@
         //    i can do this same thing in another way
            item.addEventListener('click', function(event){
             // console.log(event.target) 
-            console.log(event.target.parentNode) if i want to get parent of this one then i will use the parentnode
+            console.log(event.target.parentNode) /* if i want to get parent of this one then i will use the parentnode */
            })
           item.addEventListener('click', function(event){
-            event.target.parentNode.removeChild(event.target) this method can be used to remove the item which is targeted
+            event.target.parentNode.removeChild(event.target) /* this method can be used to remove the item which is targeted */
           })
-        } */
+        }
+        
+        /* but here i need to add eventhander in the parent element because to apply the rules in all items new items and adding items */
+
        document.getElementById('list-container').addEventListener('click', function(event){
     //    console.log(event.target) i can see item class is added in all the items
         event.target.parentNode.removeChild(event.target)
